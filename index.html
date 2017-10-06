@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>JQuery What's Wrong With This?</title>
+
+</head>
+<body>
+<a href="#" class="clicky">Clickable element</a>
+
+<script type="text/JavaScript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+<script type="text/Javascript">
+(function($) {
+  $(document).ready(function() {
+    $('.clicky').click( function() {
+      var $element = $(this);
+      $element.addClass('clicked');
+      setTimeout( function() {
+        $element.removeClass('clicked');
+      }, 2000 );
+    });
+  });
+})(jQuery);
+</script>
+</body>
+</html>
